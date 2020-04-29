@@ -2,7 +2,30 @@ import * as React from 'react'
 import Layout from './Layout'
 import styled from 'styled-components'
 
-const TagsSection = styled.section``
+const TagsSection = styled.section`
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid red;
+  > ol {
+    margin: 0 -12px;
+    > li {
+      display: inline-block;
+      padding: 4px 16px;
+      margin: 8px 12px;
+      background: #d9d9d9;
+      border-radius: 18px;
+      font-size: 14px;
+    }
+  }
+  > button {
+    padding: 2px 4px;
+    margin-bottom: 8px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: #666;
+  }
+`
 const NotesSection = styled.section``
 const CategorySection = styled.section``
 const NumberPadSection = styled.section``
@@ -17,6 +40,7 @@ const Money: React.FunctionComponent = () => {
           <li>住</li>
           <li>行</li>
         </ol>
+        <button>新增标签</button>
       </TagsSection>
       <NotesSection>
         <label>
