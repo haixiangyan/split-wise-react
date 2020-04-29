@@ -44,7 +44,29 @@ const NotesSection = styled.section`
      }
   }
 `
-const CategorySection = styled.section``
+const CategorySection = styled.section`
+  font-size: 24px;
+  > ul {
+    display: flex;
+    background: #c4c4c4;
+    > li {
+      padding: 16px 0;
+      width: 50%;
+      text-align: center;
+      position: relative;
+      &.selected::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: red;
+      }
+    }
+  }
+`
 const NumberPadSection = styled.section``
 
 const Money: React.FunctionComponent = () => {
@@ -67,8 +89,8 @@ const Money: React.FunctionComponent = () => {
       </NotesSection>
       <CategorySection>
         <ul>
-          <li>支出</li>
-          <li>收</li>
+          <li className="selected">支出</li>
+          <li>收入</li>
         </ul>
       </CategorySection>
       <NumberPadSection>
