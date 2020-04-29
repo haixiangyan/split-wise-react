@@ -1,9 +1,9 @@
 import React from 'react'
 import {HashRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
 import Tags from './pages/Tags'
-import Money from './components/Money'
-import Statistics from './components/Statistics'
-import NotFound from './components/NotFound'
+import Money from './pages/Money'
+import Statistics from './pages/Statistics'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
