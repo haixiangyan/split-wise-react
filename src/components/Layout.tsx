@@ -16,7 +16,7 @@ const Main = styled.div`
 const Layout: React.FunctionComponent = (props: any) => {
   return (
     <Wrapper>
-      <Main>
+      <Main className={props.className}>
         {props.children}
       </Main>
       <Nav/>

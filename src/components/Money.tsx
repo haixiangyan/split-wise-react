@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const TagsSection = styled.section`
   padding: 12px 16px;
   background: #ffffff;
-  border: 1px solid red;
+  flex-grow: 1;
   > ol {
     margin: 0 -12px;
     > li {
@@ -85,6 +85,7 @@ const NumberPadSection = styled.section`
       width: 25%;
       height: 64px;
       font-size: 18px;
+      border: none;
       &.ok {
         height: 128px;
         float: right;
@@ -114,9 +115,14 @@ const NumberPadSection = styled.section`
   }
 `
 
+const MoneyLayout = styled(Layout)`
+  display: flex;
+  flex-direction: column;
+`
+
 const Money: React.FunctionComponent = () => {
   return (
-    <Layout>
+    <MoneyLayout>
       <TagsSection>
         <ol>
           <li>衣</li>
@@ -162,7 +168,7 @@ const Money: React.FunctionComponent = () => {
           <button className="dot">.</button>
         </div>
       </NumberPadSection>
-    </Layout>
+    </MoneyLayout>
   )
 }
 
