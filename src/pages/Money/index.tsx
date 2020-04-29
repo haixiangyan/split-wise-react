@@ -2,7 +2,7 @@ import * as React from 'react'
 import Layout from '../../components/Layout'
 import styled from 'styled-components'
 import TagsSection from './TagsSection'
-import NotesSection from './NotesSection'
+import NoteSection from './NoteSection'
 import CategorySection from './CategorySection'
 import NumberPadSection from './NumberPadSection'
 
@@ -15,7 +15,7 @@ const Money: React.FunctionComponent = () => {
   return (
     <MoneyLayout>
       <TagsSection/>
-      <NotesSection/>
+      <NoteSection/>
       <CategorySection/>
       <NumberPadSection/>
     </MoneyLayout>
