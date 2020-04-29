@@ -32,6 +32,10 @@ body {
   color: #333;
 }
 
+:focus {
+  outline: none;
+}
+
 button {
   font-family: inherit;
 }

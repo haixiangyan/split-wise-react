@@ -26,7 +26,24 @@ const TagsSection = styled.section`
     color: #666;
   }
 `
-const NotesSection = styled.section``
+const NotesSection = styled.section`
+  background: #f5f5f5;
+  padding: 0 16px;
+  font-size: 14px;
+  > label {
+     display: flex;
+     align-items: center;
+     > span {
+        margin-right: 16px;
+     }
+     > input {
+        flex-grow: 1;
+        height: 72px;
+        background: none;
+        border: none;
+     }
+  }
+`
 const CategorySection = styled.section``
 const NumberPadSection = styled.section``
 
@@ -45,7 +62,7 @@ const Money: React.FunctionComponent = () => {
       <NotesSection>
         <label>
           <span>备注</span>
-          <input type="text"/>
+          <input placeholder="在这里输入备注" type="text"/>
         </label>
       </NotesSection>
       <CategorySection>
