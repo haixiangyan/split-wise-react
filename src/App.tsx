@@ -4,13 +4,17 @@ import Tags from './pages/Tags'
 import Money from './pages/Money'
 import Statistics from './pages/Statistics'
 import NotFound from './pages/NotFound'
+import Tag from './pages/Tag'
 
 export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/tags">
+        <Route exact path="/tags">
           <Tags/>
+        </Route>
+        <Route path="/tags/:tag">
+          <Tag/>
         </Route>
         <Route path="/money">
           <Money/>
