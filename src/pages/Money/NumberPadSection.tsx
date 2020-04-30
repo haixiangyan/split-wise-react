@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import * as React from 'react'
 import {useState} from 'react'
+import {parseOutput} from '../../utils/compute'
 
 const Wrapper = styled.section`
   display: flex;
@@ -66,42 +67,13 @@ const NumberPadSection: React.FC = () => {
     const text = (e.target as HTMLButtonElement).textContent
     if (text === null) return
 
-    switch (text) {
-      case '0':
-      case '1':
-      case '2':
-      case '3':
-      case '4':
-      case '5':
-      case '6':
-      case '7':
-      case '8':
-      case '9':
-        if (output === '0') {
-          setOutput(text)
-        } else {
-          setOutput(output + text)
-        }
-        break
-      case '.':
-        if (output.includes('.')) return
-
-        setOutput(output + '.')
-        break
-      case '删除':
-        if (output.length === 1) {
-          setOutput('')
-        } else {
-          setOutput(output.slice(0, -1))
-        }
-        break
-      case '清空':
-        setOutput('')
-        break
-      case 'OK':
-        console.log(output)
-        break
+    if (text === 'OK') {
+      console.log('OK')
+      // TODO
+      return
     }
+
+    setOutput(parseOutput(output, text))
   }
 
   return (
