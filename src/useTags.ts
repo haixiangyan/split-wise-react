@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import createId from '../lib/createId'
+import createId from './lib/createId'
 
 export type TTag = {
   id: number
