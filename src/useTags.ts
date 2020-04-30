@@ -15,7 +15,10 @@ const defaultTags = [
 
 const useTags = () => {
   const [tags, setTags] = useState<TTag[]>(defaultTags)
-  return {tags, setTags}
+
+  const findTag = (id: number) => tags.find(t => t.id === id)
+
+  return {tags, setTags, findTag}
 }
 
 export default useTags
