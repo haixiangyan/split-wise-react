@@ -14,7 +14,7 @@ const MoneyLayout = styled(Layout)`
 
 const Money: React.FunctionComponent = () => {
   const [selected, setSelected] = useState({
-    tags: [] as string[],
+    tagIds: [] as number[],
     note: '',
     category: '-' as ('-' | '+'),
     amount: 0
@@ -26,8 +26,8 @@ const Money: React.FunctionComponent = () => {
 
   return (
     <MoneyLayout>
-      <TagsSection value={selected.tags}
-                   onChange={tags => onChange({tags})}/>
+      <TagsSection value={selected.tagIds}
+                   onChange={tagIds => onChange({tagIds})}/>
       <NoteSection value={selected.note}
                    onChange={note => onChange({note})}/>
       <CategorySection value={selected.category}
