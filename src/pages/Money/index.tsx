@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {useState} from 'react'
 import Layout from '../../components/Layout'
 import styled from 'styled-components'
 import TagsSection from './TagsSection'
@@ -12,12 +13,36 @@ const MoneyLayout = styled(Layout)`
 `
 
 const Money: React.FunctionComponent = () => {
+  const [selected, setSelected] = useState({
+    tags: [] as string[],
+    note: '',
+    category: '-' as ('-' | '+'),
+    amount: 0
+  })
+
   return (
     <MoneyLayout>
-      <TagsSection/>
-      <NoteSection/>
-      <CategorySection/>
-      <NumberPadSection/>
+      <TagsSection value={selected.tags}
+                   onChange={tags => setSelected({
+                     ...selected,
+                     tags
+                   })}/>
+      <NoteSection value={selected.note}
+                   onChange={note => setSelected({
+                     ...selected,
+                     note
+                   })}/>
+      <CategorySection value={selected.category}
+                       onChange={category => setSelected({
+                         ...selected,
+                         category
+                       })}/>
+      <NumberPadSection value={selected.amount}
+                        onOk={() => console.log('OK')}
+                        onChange={amount => setSelected({
+                          ...selected,
+                          amount
+                        })}/>
     </MoneyLayout>
   )
 }

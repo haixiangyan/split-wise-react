@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import * as React from 'react'
-import {useState} from 'react'
 import {parseOutput} from '../../utils/compute'
 
 const Wrapper = styled.section`
@@ -51,16 +50,27 @@ const Wrapper = styled.section`
   }
 `
 
-const NumberPadSection: React.FC = () => {
-  const [output, _setOutput] = useState('0')
+type TProps = {
+  value: number
+  onChange: (value: number) => void
+  onOk: () => void
+}
+
+const NumberPadSection: React.FC<TProps> = (props) => {
+  const output = props.value.toString()
 
   const setOutput = (output: string) => {
+    let value: number
+
     if (output.length > 16) {
-      output = output.slice(0, 16)
+      value = parseFloat(output.slice(0, 16))
     } else if (output.length === 0) {
-      output = '0'
+      value = 0
+    } else {
+      value = parseFloat(output)
     }
-    _setOutput(output)
+
+    props.onChange(value)
   }
 
   const onClickPad = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -68,8 +78,7 @@ const NumberPadSection: React.FC = () => {
     if (text === null) return
 
     if (text === 'OK') {
-      console.log('OK')
-      // TODO
+      props.onOk()
       return
     }
 
