@@ -20,29 +20,21 @@ const Money: React.FunctionComponent = () => {
     amount: 0
   })
 
+  const onChange = (obj: Partial<typeof selected>) => {
+    setSelected({...selected, ...obj})
+  }
+
   return (
     <MoneyLayout>
       <TagsSection value={selected.tags}
-                   onChange={tags => setSelected({
-                     ...selected,
-                     tags
-                   })}/>
+                   onChange={tags => onChange({tags})}/>
       <NoteSection value={selected.note}
-                   onChange={note => setSelected({
-                     ...selected,
-                     note
-                   })}/>
+                   onChange={note => onChange({note})}/>
       <CategorySection value={selected.category}
-                       onChange={category => setSelected({
-                         ...selected,
-                         category
-                       })}/>
+                       onChange={category => onChange({category})}/>
       <NumberPadSection value={selected.amount}
                         onOk={() => console.log('OK')}
-                        onChange={amount => setSelected({
-                          ...selected,
-                          amount
-                        })}/>
+                        onChange={amount => onChange({amount})}/>
     </MoneyLayout>
   )
 }
