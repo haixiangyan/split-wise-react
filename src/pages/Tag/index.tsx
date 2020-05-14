@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import useTags from '../../useTags'
 import Layout from '../../components/Layout'
 import Icon from '../../components/Icon'
@@ -39,10 +39,15 @@ const Tag: React.FC = () => {
     updateTags(tag!.id, {name: e.target.value})
   }
 
+  const history = useHistory()
+  const onClickBack = () => {
+    history.goBack()
+  }
+
   return (
     <Layout>
       <Topbar>
-        <Icon name="left-copy"/>
+        <Icon name="left-copy" onClick={onClickBack}/>
         <span>编辑标签</span>
         <Icon/>
       </Topbar>

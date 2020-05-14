@@ -15,7 +15,7 @@ const Label = styled.label`
    }
 `
 
-type TProps = React.InputHTMLAttributes<any> & {
+type TProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string
 }
 
