@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Layout from '../../components/Layout'
-import useTags from '../../useTags'
+import useTags from '../../hooks/useTags'
 import styled from 'styled-components'
 import Icon from '../../components/Icon'
 import {Link} from 'react-router-dom'

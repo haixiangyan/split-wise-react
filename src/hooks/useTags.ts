@@ -1,6 +1,6 @@
-import {useEffect, useRef, useState} from 'react'
-import createId from './lib/createId'
-import useUpdate from './hooks/useUpdate'
+import {useEffect, useState} from 'react'
+import createId from '../lib/createId'
+import useUpdate from './useUpdate'
 
 export type TTag = {
   id: number
