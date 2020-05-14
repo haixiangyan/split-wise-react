@@ -1,5 +1,6 @@
-import {useState} from 'react'
+import {useEffect, useRef, useState} from 'react'
 import createId from './lib/createId'
+import useUpdate from './hooks/useUpdate'
 
 export type TTag = {
   id: number
@@ -14,20 +15,16 @@ const defaultTags = [
 ]
 
 const useTags = () => {
-  const [tags, setTags] = useState<TTag[]>(defaultTags)
+  const [tags, setTags] = useState<TTag[]>([])
+
+  useEffect(() => {
+    setTags(JSON.parse(window.localStorage.getItem('tags') || '[]'))
+  }, []) // 第一次渲染
+  useUpdate(() => {
+    window.localStorage.setItem('tags', JSON.stringify(tags))
+  }, [tags]) // 监听 tags
 
   const findTag = (id: number) => tags.find(t => t.id === id)
-
-  const findTagIndex = (id: number) => {
-    let result = -1
-    for (let i = 0; i < tags.length; i++) {
-      if (tags[i].id === id) {
-        result = i
-        break
-      }
-    }
-    return result
-  }
 
   const updateTags = (id: number, {name}: {name: string}) => {
     setTags(tags.map(tag => tag.id === id ? {id, name} : tag))
@@ -37,7 +34,17 @@ const useTags = () => {
     setTags(tags.filter(tag => tag.id !== id))
   }
 
-  return {tags, setTags, findTag, updateTags, deleteTag}
+  const addTag = () => {
+    const tagName = window.prompt('新标签的名称为')
+    if (tagName !== null) {
+      setTags([...tags, {
+        id: createId(),
+        name: tagName
+      }])
+    }
+  }
+
+  return {tags, setTags, findTag, updateTags, deleteTag, addTag}
 }
 
 export default useTags

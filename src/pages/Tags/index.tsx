@@ -25,7 +25,7 @@ const TagList = styled.ol`
 `
 
 const Tags: React.FunctionComponent = () => {
-  const {tags, setTags} = useTags()
+  const {tags, addTag} = useTags()
 
   return (
     <Layout>
@@ -41,7 +41,7 @@ const Tags: React.FunctionComponent = () => {
       </TagList>
       <Center>
         <Space/>
-        <Button>新增标签</Button>
+        <Button onClick={addTag}>新增标签</Button>
       </Center>
     </Layout>
   )
