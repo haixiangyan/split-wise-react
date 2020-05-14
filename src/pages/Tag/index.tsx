@@ -8,6 +8,7 @@ import styled from 'styled-components'
 import Input from '../../components/Input'
 import Center from '../../components/Center'
 import Space from '../../components/Space'
+import {ChangeEventHandler} from 'react'
 
 type TParams = {
   tagId: string
@@ -29,10 +30,14 @@ const Topbar = styled.header`
 `
 
 const Tag: React.FC = () => {
-  const {findTag} = useTags()
+  const {findTag, updateTags} = useTags()
   const {tagId} = useParams<TParams>()
 
   const tag = findTag(parseInt(tagId))
+
+  const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    updateTags(tag!.id, {name: e.target.value})
+  }
 
   return (
     <Layout>
@@ -42,7 +47,11 @@ const Tag: React.FC = () => {
         <Icon/>
       </Topbar>
       <InputWrapper>
-        <Input label="标签名" type="text" value={tag!.name} placeholder="标签名"/>
+        <Input label="标签名"
+               type="text"
+               onChange={onChange}
+               value={tag!.name}
+               placeholder="标签名"/>
       </InputWrapper>
       <Space/>
       <Center>
