@@ -4,6 +4,7 @@ import useTags from '../../useTags'
 import styled from 'styled-components'
 import Icon from '../../components/Icon'
 import {Link} from 'react-router-dom'
+import Button from '../../components/Button'
 
 const TagList = styled.ol`
   font-size: 16px;
@@ -19,15 +20,6 @@ const TagList = styled.ol`
       padding: 12px 16px 12px 0;
     }
   }
-`
-
-const AddTagButton = styled.button`
-  padding: 8px 12px;
-  font-size: 18px;
-  border: none;
-  border-radius: 4px;
-  background: #f60;
-  color: #fff;
 `
 
 const Center = styled.div`
@@ -58,7 +50,7 @@ const Tags: React.FunctionComponent = () => {
       </TagList>
       <Center>
         <Space/>
-        <AddTagButton>新增标签</AddTagButton>
+        <Button>新增标签</Button>
       </Center>
     </Layout>
   )
