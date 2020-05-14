@@ -29,18 +29,12 @@ const useTags = () => {
     return result
   }
 
-  const updateTags = (id: number, obj: {name: string}) => {
-    const index = findTagIndex(id)
-    const tagsClone = JSON.parse(JSON.stringify(tags))
-    tagsClone.splice(index, 1, {id, name: obj.name})
-    setTags(tagsClone)
+  const updateTags = (id: number, {name}: {name: string}) => {
+    setTags(tags.map(tag => tag.id === id ? {id, name} : tag))
   }
 
   const deleteTag = (id: number) => {
-    const index = findTagIndex(id)
-    const tagsClone = JSON.parse(JSON.stringify(tags))
-    tagsClone.splice(index, 1)
-    setTags(tagsClone)
+    setTags(tags.filter(tag => tag.id !== id))
   }
 
   return {tags, setTags, findTag, updateTags, deleteTag}
