@@ -58,7 +58,10 @@ const Tag: React.FC = () => {
           </InputWrapper>
           <Space/>
           <Center>
-            <Button onClick={() => deleteTag(tag!.id)}>删除标签</Button>
+            <Button onClick={() => {
+              deleteTag(tag!.id)
+              window.history.back()
+            }}>删除标签</Button>
           </Center>
         </div> : <Center>不存在</Center>
       }
