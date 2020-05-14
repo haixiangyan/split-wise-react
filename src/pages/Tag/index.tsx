@@ -30,7 +30,7 @@ const Topbar = styled.header`
 `
 
 const Tag: React.FC = () => {
-  const {findTag, updateTags} = useTags()
+  const {findTag, updateTags, deleteTag} = useTags()
   const {tagId} = useParams<TParams>()
 
   const tag = findTag(parseInt(tagId))
@@ -46,17 +46,22 @@ const Tag: React.FC = () => {
         <span>编辑标签</span>
         <Icon/>
       </Topbar>
-      <InputWrapper>
-        <Input label="标签名"
-               type="text"
-               onChange={onChange}
-               value={tag!.name}
-               placeholder="标签名"/>
-      </InputWrapper>
-      <Space/>
-      <Center>
-        <Button>删除标签</Button>
-      </Center>
+      {
+        tag ?
+        <div>
+          <InputWrapper>
+            <Input label="标签名"
+                   type="text"
+                   onChange={onChange}
+                   value={tag!.name}
+                   placeholder="标签名"/>
+          </InputWrapper>
+          <Space/>
+          <Center>
+            <Button onClick={() => deleteTag(tag!.id)}>删除标签</Button>
+          </Center>
+        </div> : <Center>不存在</Center>
+      }
     </Layout>
   )
 }
