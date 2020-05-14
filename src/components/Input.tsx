@@ -9,7 +9,7 @@ const Label = styled.label`
    }
    > input {
       flex-grow: 1;
-      height: 72px;
+      height: 44px;
       background: none;
       border: none;
    }

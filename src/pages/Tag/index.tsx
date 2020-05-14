@@ -5,10 +5,19 @@ import Layout from '../../components/Layout'
 import Icon from '../../components/Icon'
 import Button from '../../components/Button'
 import styled from 'styled-components'
+import Input from '../../components/Input'
+import Center from '../../components/Center'
+import Space from '../../components/Space'
 
 type TParams = {
   tagId: string
 }
+
+const InputWrapper = styled.div`
+  background: white;
+  padding: 0 16px;
+  margin-top: 16px;
+`
 
 const Topbar = styled.header`
   display: flex;
@@ -32,13 +41,13 @@ const Tag: React.FC = () => {
         <span>编辑标签</span>
         <Icon/>
       </Topbar>
-      <label>
-        <span>标签名</span>
-        <input placeholder="标签名" type="text"/>
-      </label>
-      <div>
+      <InputWrapper>
+        <Input label="标签名" type="text" value={tag!.name} placeholder="标签名"/>
+      </InputWrapper>
+      <Space/>
+      <Center>
         <Button>删除标签</Button>
-      </div>
+      </Center>
     </Layout>
   )
 }
