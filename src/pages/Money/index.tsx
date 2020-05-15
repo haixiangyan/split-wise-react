@@ -46,7 +46,7 @@ const Money: React.FunctionComponent = () => {
   }
 
   return (
-    <MoneyLayout>
+    <MoneyLayout scrollTop={9999}>
       <TagsSection value={record.tagIds}
                    onChange={tagIds => onChange({tagIds})}/>
       <NoteSection value={record.note}
