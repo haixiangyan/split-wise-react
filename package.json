@@ -2,6 +2,7 @@
   "name": "split-wise-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://Haixiang6123.github.io/split-wise-react",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
@@ -74,7 +75,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -95,6 +98,7 @@
     "@types/classnames": "^2.2.10",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.0",
+    "gh-pages": "^2.2.0",
     "svg-sprite-loader": "^4.2.7"
   },
   "jest": {
