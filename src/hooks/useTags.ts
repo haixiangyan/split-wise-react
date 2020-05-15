@@ -46,7 +46,11 @@ const useTags = () => {
     }
   }
 
-  return {tags, setTags, findTag, updateTags, deleteTag, addTag}
+  const getName = (id: number) => {
+    return tags.find(t => t.id === id)
+  }
+
+  return {tags, setTags, findTag, updateTags, deleteTag, addTag, getName}
 }
 
 export default useTags
