@@ -65,7 +65,7 @@ const Statistics: React.FunctionComponent = () => {
               return (
                 <Item key={r.createdAt}>
                   <div className="tags">
-                    {r.tagIds.map(tagId => <span key={tagId}>{getName(tagId)!.name}</span>)}
+                    {r.tagIds.map(tagId => getName(tagId)!.name).join(',')}
                   </div>
                   {
                     r.note && <div className="note">
@@ -73,7 +73,7 @@ const Statistics: React.FunctionComponent = () => {
                     </div>
                   }
                   <div className="amount">
-                    {r.amount}
+                    $ {r.amount}
                   </div>
                 </Item>
               )
