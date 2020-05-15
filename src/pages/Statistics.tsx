@@ -25,12 +25,14 @@ const Statistics: React.FunctionComponent = () => {
   const [category, setCategory] = useState<'-' | '+'>('-')
   const {records} = useRecords()
   const {getName} = useTags()
+  const selectedRecords = records.filter(record => record.category === category)
+
   return (
     <Layout>
       <CategorySection value={category}
                        onChange={(value) => setCategory(value)}/>
       <div>
-        {records && records.map(record => {
+        {selectedRecords && selectedRecords.map(record => {
           return (
             <Item key={record.createdAt}>
               <div className="tags">
