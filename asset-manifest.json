@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/split-wise-react/static/css/main.74747607.chunk.css",
+    "main.js": "/split-wise-react/static/js/main.97eff37e.chunk.js",
+    "main.js.map": "/split-wise-react/static/js/main.97eff37e.chunk.js.map",
+    "runtime-main.js": "/split-wise-react/static/js/runtime-main.98080fcf.js",
+    "runtime-main.js.map": "/split-wise-react/static/js/runtime-main.98080fcf.js.map",
+    "static/js/2.6d109f58.chunk.js": "/split-wise-react/static/js/2.6d109f58.chunk.js",
+    "static/js/2.6d109f58.chunk.js.map": "/split-wise-react/static/js/2.6d109f58.chunk.js.map",
+    "index.html": "/split-wise-react/index.html",
+    "precache-manifest.d5bcda28824ca3fbd03456d509cee64d.js": "/split-wise-react/precache-manifest.d5bcda28824ca3fbd03456d509cee64d.js",
+    "service-worker.js": "/split-wise-react/service-worker.js",
+    "static/css/main.74747607.chunk.css.map": "/split-wise-react/static/css/main.74747607.chunk.css.map",
+    "static/js/2.6d109f58.chunk.js.LICENSE.txt": "/split-wise-react/static/js/2.6d109f58.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.98080fcf.js",
+    "static/js/2.6d109f58.chunk.js",
+    "static/css/main.74747607.chunk.css",
+    "static/js/main.97eff37e.chunk.js"
+  ]
+}
