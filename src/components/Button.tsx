@@ -1,4 +1,3 @@
-import * as React from 'react'
 import styled from 'styled-components'
 
 const Button = styled.button`
@@ -9,11 +8,4 @@ const Button = styled.button`
   background: #f60;
   color: #fff;
 `
-
-// const component: React.FunctionComponent = () => {
-//   return (
-//     <div>component</div>
-//   )
-// }
-//
 export default Button

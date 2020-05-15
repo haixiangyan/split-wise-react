@@ -35,7 +35,7 @@ const Statistics: React.FunctionComponent = () => {
 
   let hash: { [key: string]: TRecord[] } = {}
 
-  selectedRecords.map(r => {
+  selectedRecords.forEach(r => {
     const key = dayjs(r.createdAt).format('YYYY年MM月DD日')
     const value = r
 

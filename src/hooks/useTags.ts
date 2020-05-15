@@ -24,7 +24,7 @@ const useTags = () => {
   }, []) // 第一次渲染，组件挂载时执行
   useUpdate(() => {
     window.localStorage.setItem('tags', JSON.stringify(tags))
-  }, [tags]) // 监听 tags
+  }, tags) // 监听 tags
 
   const findTag = (id: number) => tags.find(t => t.id === id)
 
