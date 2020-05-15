@@ -47,7 +47,6 @@ const Money: React.FunctionComponent = () => {
 
   return (
     <MoneyLayout>
-      {JSON.stringify(record)}
       <TagsSection value={record.tagIds}
                    onChange={tagIds => onChange({tagIds})}/>
       <NoteSection value={record.note}
